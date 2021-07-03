@@ -54,6 +54,7 @@ def protonvpn(interval):
 	while True:
 		try:
 			if int(time.time())-t>interval:
+ 				t = int(time.time())
 				runcmd("protonvpn c -r")[0]
 				print("Switched:",datetime.now().time().strftime("%H:%M:%S"),res)
 			time.sleep(1)
